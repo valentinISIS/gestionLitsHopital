@@ -17,4 +17,23 @@ public class Hopital {
     public Set<Service> getServices() {
         return services;
     }
+
+    public float getTauxOccupation(TypeLit typeLit){
+        int chambreOccuper = 0;
+        int chambreTotales = 0;
+        for (Service service: services) {
+            if (service.getTypeLit() == typeLit){
+                for (Chambre chambre: service.getChambres()) {
+                    for (Lit lit: chambre.getLits()) {
+                        chambreTotales ++;
+                        if (!lit.estLibre()){
+                            chambreOccuper++;
+                        }
+                    }
+                }
+            }
+        }
+        if (chambreTotales == 0) return -1;
+        return chambreOccuper/chambreTotales;
+    }
 }

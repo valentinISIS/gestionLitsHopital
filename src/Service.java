@@ -24,5 +24,9 @@ public class Service {
     public Set<Chambre> getChambres(){
         return chambres;
     }
+
+    public TypeLit getTypeLit() {
+        return typeLit;
+    }
 }
 
