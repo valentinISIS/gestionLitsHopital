@@ -13,4 +13,8 @@ public class Hopital {
         if (services.size() == 9) throw new IllegalCallerException("trop de services");
         services.add(new Service(nom, services.size()+1, typeLit));
     }
+
+    public Set<Service> getServices() {
+        return services;
+    }
 }

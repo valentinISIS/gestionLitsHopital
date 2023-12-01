@@ -34,7 +34,7 @@ public class Admission {
         for (Service service: hopital.getServices()) {
             for (Chambre chambre: service.getChambres()) {
                 for (Lit lit: chambre.getLits()) {
-                    if (lit.estOccuper()) patients.add(lit.getPatient());
+                    if (!lit.estLibre()) patients.add(lit.getPatient());
                 }
             }
         }
